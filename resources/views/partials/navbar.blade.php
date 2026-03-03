@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3" style="margin-left: 250px;">
     <div class="container-fluid">
-        <span class="navbar-brand">Laravel Dashboard</span>
+        <span class="navbar-brand">Cody Asset Management</span>
 
         <ul class="navbar-nav ms-auto me-4">
             <li class="nav-item dropdown">

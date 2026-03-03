@@ -88,7 +88,7 @@
 
   <div class="main-content">
     @include('partials.navbar')
-
+    @include('partials.create_modal')
     <div class="content">
       @yield('content')
     </div>

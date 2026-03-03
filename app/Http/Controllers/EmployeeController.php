@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class EmployeeController extends Controller
 {
     public function index()
     {
-       $menuItems = [
+        $menuItems = [
             [
                 'label' => 'Dashboard',
                 'icon' => 'bi bi-house',
@@ -43,7 +43,11 @@ class DashboardController extends Controller
                 'route' => 'users.index',
             ],
         ];
+        return view('employees.index', compact('menuItems'));
+    }
 
-        return view('dashboard', compact('menuItems'));
+    public function create()
+    {
+        return view('employees.create');
     }
 }

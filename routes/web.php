@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmployeeController;
 
 // Redirect root to login page
 Route::get('/', function () {
@@ -19,6 +20,9 @@ Route::middleware('auth')->group(function () {
 
     // Dummy routes for Users and Reports (replace with real controllers later)
     Route::get('/users', function() { return 'Users list'; })->name('users.index');
-    Route::get('/users/create', function() { return 'Add user form'; })->name('users.create');
-    Route::get('/reports', function() { return 'Reports page'; })->name('reports.index');
-});
+    // Route::get('/users/create', function() { return 'Add user form'; })->name('users.create');
+    // Route::get('/reports', function() { return 'Reports page'; })->name('reports.index');
+    Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index');
+    Route::get('/employee/create', [EmployeeController::class, 'create'])->name('employee.create');
+    Route::post('/employee/store', [EmployeeController::class, 'store'])->name('employee.store');
+}); 
