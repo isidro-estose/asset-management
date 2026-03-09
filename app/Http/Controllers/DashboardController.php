@@ -20,7 +20,6 @@ class DashboardController extends Controller
                 'route' => 'employee.index',
                 'children' => [
                     ['label' => 'All Users', 'route' => 'employee.index'],
-                    ['label' => 'Add User', 'route' => 'users.index'],
                 ],
             ],
             [

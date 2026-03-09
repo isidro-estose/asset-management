@@ -1,5 +1,5 @@
 <div class="sidebar bg-dark text-white p-3" style="width: 250px; height: 100vh; position: fixed; top: 0; left: 0;">
-    <h4 class="text-center mb-5">CODY</h4>
+    <img src="{{ asset('img/logo.webp') }}" alt="Company Logo" class="img-fluid mb-3">
     <ul class="nav flex-column">
         @foreach ($menuItems as $item)
             @php

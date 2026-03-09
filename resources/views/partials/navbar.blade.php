@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light ps-3" style="margin-left: 250px;">
     <div class="container-fluid">
-        <span class="navbar-brand">Cody Asset Management</span>
+        <h4>Cody Asset Management</h4>
 
         <ul class="navbar-nav ms-auto me-4">
             <li class="nav-item dropdown">

@@ -25,4 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index');
     Route::get('/employee/create', [EmployeeController::class, 'create'])->name('employee.create');
     Route::post('/employee/store', [EmployeeController::class, 'store'])->name('employee.store');
+    Route::get('/partials/{employee}/edit_modal', [EmployeeController::class, 'edit'])->name('employee.edit');
+    Route::put('/partials/{employee}/update', [EmployeeController::class, 'update'])->name('employee.update');
+    Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 }); 
