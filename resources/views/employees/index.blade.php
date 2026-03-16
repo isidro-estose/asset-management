@@ -38,7 +38,25 @@
                     <td>{{ $employee->empDeptId }}</td>
                     <td>{{ $employee->empHireDate }}</td>
                     <td>
+<<<<<<< HEAD
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmployeeModal{{$employee->id}}">Edit</button>
+=======
+                        <button 
+                            type="button"
+                            class="btn btn-primary edtBtn"
+                            data-id="{{ $employee->id }}"
+                            data-empId="{{ $employee->empId }}"
+                            data-empFname="{{ $employee->empFname }}"
+                            data-empLname="{{ $employee->empLname }}"
+                            data-empPosition="{{ $employee->empPosition }}"
+                            data-empDept="{{ $employee->empDeptId }}"
+                            data-empHireDate="{{ $employee->empHireDate }}"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#editEmployeeModal">
+                        Edit
+                        </button>
+                        
+>>>>>>> 1fce915 (Done Employee side with many changes)
                     </td>
                     <td>
                         <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this employee?');">
@@ -52,3 +70,4 @@
         </tbody>
     </table>
 @endsection
+<script src="{{ asset('js/eventModal.js') }}"></script>

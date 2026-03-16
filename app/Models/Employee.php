@@ -12,6 +12,6 @@ class Employee extends Model
         'empLname',
         'empPosition',
         'empDeptId',
-        'empHireDate'
+        'empHireDate',
     ];
 }

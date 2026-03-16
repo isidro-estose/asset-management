@@ -89,7 +89,14 @@
   <div class="main-content">
     @include('partials.navbar')
     @include('partials.create_modal')
+<<<<<<< HEAD
     @include('partials.edit_modal')
+=======
+    
+    @if(isset($employee))
+        @include('partials.edit_modal')
+    @endif
+>>>>>>> 1fce915 (Done Employee side with many changes)
     <div class="content">
       @yield('content')
     </div>

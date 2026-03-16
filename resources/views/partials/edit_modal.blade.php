@@ -1,6 +1,5 @@
 <!-- resources/views/projects/edit_modal.blade.php -->
-@foreach ($employees as $employee)
-<div class="modal fade" id="editEmployeeModal{{ $employee->id }}" tabindex="-1" aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
+<div class="modal fade" id="editEmployeeModal" tabindex="-1" aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <!-- Your form goes here -->
-                <form method="POST" action="{{ route('employee.update', $employee->id) }}">
+                <form method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
@@ -40,4 +39,3 @@
         </div>
     </div>
 </div>
-@endforeach

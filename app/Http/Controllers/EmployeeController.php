@@ -43,7 +43,11 @@ class EmployeeController extends Controller
                 'route' => 'users.index',
             ],
         ];
+<<<<<<< HEAD
          $employees = Employee::all();
+=======
+        $employees = Employee::all();
+>>>>>>> 1fce915 (Done Employee side with many changes)
         return view('employees.index', compact('employees', 'menuItems'));
     }
 
@@ -51,6 +55,50 @@ class EmployeeController extends Controller
     {
         return view('employees.create');    
     }
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'empId' => 'required|integer',
+            'empFname' => 'required|string|max:255',
+            'empLname' => 'required|string|max:255',
+            'empPosition' => 'required|string|max:255',
+            'empDeptId' => 'required|integer',
+            'empHireDate' => 'required|date_format:Y-m-d',
+        ]);
+
+        $newEmployee = Employee::create($data);
+
+        return redirect(route('employee.index'));
+    }
+
+    public function edit(Employee $employee)
+    {
+        return view('employees.edit', ['employee' => $employee,]);
+    }
+
+    public function update(Request $request, Employee $employee)
+    {
+        $data = $request->validate([
+            'empId' => 'required|integer',
+            'empFname' => 'required|string|max:255',
+            'empLname' => 'required|string|max:255',
+            'empPosition' => 'required|string|max:255',
+            'empDeptId' => 'required|integer',
+            'empHireDate' => 'required|date_format:Y-m-d',
+        ]);
+
+        $employee->update($data);
+
+        return redirect(route('employee.index'))->with('success', 'Employee updated successfully.');
+    }
+
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+
+        return redirect(route('employee.index'))->with('success', 'Employee deleted successfully.');
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([
