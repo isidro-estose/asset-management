@@ -12,25 +12,31 @@
                     @csrf
                     @method('POST')
                     <div class="mb-3">
-                        <input type="text" class="form-control w-25" id="empId" name="empId" placeholder="ID Number">
+                        <label for="empId" class="form-label">Employee Number</label>
+                        <input type="text" class="form-control w-25" id="empId" name="empId">
                     </div>
                     <div class="mb-3 row">
                         <div class="col">
-                            <input type="text" class="form-control" id="empFname" name="empFname" placeholder="First Name">
+                            <label for="empFname" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="empFname" name="empFname">
                         </div>
                         <div class="col">
-                            <input type="text" class="form-control" id="empLname" name="empLname" placeholder="Last Name">
+                            <label for="empLname" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="empLname" name="empLname">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-md-6">
-                           <input type="text" class="form-control" id="empPosition" name="empPosition" placeholder="Designation">
+                           <label for="empPosition" class="form-label">Designation</label>
+                           <input type="text" class="form-control" id="empPosition" name="empPosition">
                         </div>
                         <div class="col-md-6">
-                           <input type="text" class="form-control" id="empDeptId" name="empDeptId" placeholder="Department">
+                           <label for="empDeptId" class="form-label">Department</label>
+                           <input type="text" class="form-control" id="empDeptId" name="empDeptId">
                         </div>
                     </div>
                     <div class="mb-3 form-group">
+                        <label for="empHireDate" class="form-label">Date Hired</label>
                         <input class="form-control w-50" data-provide="datepicker" data-date-format="yyyy-mm-dd" id="empHireDate" type="date" name="empHireDate"/>
                     </div>
                     <button type="submit" class="btn btn-primary">Save</button>

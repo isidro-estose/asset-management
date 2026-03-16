@@ -38,9 +38,6 @@
                     <td>{{ $employee->empDeptId }}</td>
                     <td>{{ $employee->empHireDate }}</td>
                     <td>
-<<<<<<< HEAD
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmployeeModal{{$employee->id}}">Edit</button>
-=======
                         <button 
                             type="button"
                             class="btn btn-primary edtBtn"
@@ -55,8 +52,6 @@
                             data-bs-target="#editEmployeeModal">
                         Edit
                         </button>
-                        
->>>>>>> 1fce915 (Done Employee side with many changes)
                     </td>
                     <td>
                         <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this employee?');">
