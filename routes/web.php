@@ -27,4 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/employee/store', [EmployeeController::class, 'store'])->name('employee.store');
     Route::put('/partials/{employee}/update', [EmployeeController::class, 'update'])->name('employee.update');
     Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+
+    Route::get('/items', [App\Http\Controllers\ItemController::class, 'main'])->name('items.main');
 }); 

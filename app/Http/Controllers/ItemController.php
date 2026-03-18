@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\item;
 
-class DashboardController extends Controller
+class ItemController extends Controller
 {
-    public function index()
+    public function main()
     {
-       $menuItems = [
+        $menuItems = [
             [
                 'label' => 'Dashboard',
                 'icon' => 'bi bi-house',
@@ -37,6 +38,7 @@ class DashboardController extends Controller
             ],
         ];
 
-        return view('dashboard', compact('menuItems'));
+        $items = Item::all();
+        return view('items.main', compact('items', 'menuItems'));
     }
 }

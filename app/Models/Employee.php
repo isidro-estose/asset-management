@@ -13,5 +13,6 @@ class Employee extends Model
         'empPosition',
         'empDeptId',
         'empHireDate',
+        'emp_status',
     ];
 }

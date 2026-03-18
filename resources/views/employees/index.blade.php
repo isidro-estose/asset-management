@@ -5,7 +5,7 @@
 @section('content')
     <div class="mb-1 row">
         <div class="col">
-            <h1>Employees</h1>
+            <h3>Employees</h3>
         </div>
         <div class="col">
             <!-- Button to trigger modal -->
@@ -24,6 +24,7 @@
                 <th>Position</th>
                 <th>Department</th>
                 <th>Date Hired</th>
+                <th>Employee Status</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
@@ -37,6 +38,7 @@
                     <td>{{ $employee->empPosition }}</td>
                     <td>{{ $employee->empDeptId }}</td>
                     <td>{{ $employee->empHireDate }}</td>
+                    <td>{{ $employee->emp_status }}</td>
                     <td>
                         <button 
                             type="button"

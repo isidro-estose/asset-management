@@ -24,17 +24,11 @@ class EmployeeController extends Controller
                 ],
             ],
             [
-                'label' => 'Inventory',
+                'label' => 'Devices',
                 'icon' => 'bi bi-diagram-3-fill',
-                'route' => 'users.index',//need to change using controller
+                'route' => 'items.main',//need to change using controller
                 'children' => [
-                    ['label' => 'iOS', 'route' => 'users.index'],
-                    ['label' => 'Windows', 'route' => 'users.index'],
-                    ['label' => 'Linux', 'route' => 'users.index'],
-                    ['label' => 'Phones', 'route' => 'users.index'],
-                    ['label' => 'Printers', 'route' => 'users.index'],
-                    ['label' => 'Monitors', 'route' => 'users.index'],
-                    ['label' => 'Accessories', 'route' => 'users.index'],
+                    ['label' => 'All Devices', 'route' => 'items.main'],
                 ],
             ],
             [
@@ -60,6 +54,7 @@ class EmployeeController extends Controller
             'empPosition' => 'required|string|max:255',
             'empDeptId' => 'required|integer',
             'empHireDate' => 'required|date_format:Y-m-d',
+            'emp_status' => 'Employed',
         ]);
 
         $newEmployee = Employee::create($data);
@@ -81,6 +76,7 @@ class EmployeeController extends Controller
             'empPosition' => 'required|string|max:255',
             'empDeptId' => 'required|integer',
             'empHireDate' => 'required|date_format:Y-m-d',
+            'emp_status' => 'required|string|max:255',
         ]);
 
         $employee->update($data);
