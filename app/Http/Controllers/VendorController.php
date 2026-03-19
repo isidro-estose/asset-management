@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Vendor;
 
-class DashboardController extends Controller
+class VendorController extends Controller
 {
-    public function index()
+    public function main()
     {
-       $menuItems = [
+        $menuItems = [
             [
                 'label' => 'Dashboard',
                 'icon' => 'bi bi-house',
@@ -38,6 +39,7 @@ class DashboardController extends Controller
             ],
         ];
 
-        return view('dashboard', compact('menuItems'));
+        $vendors = Vendor::all();
+        return view('vendors.main', compact('menuItems', 'vendors'));
     }
 }

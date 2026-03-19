@@ -29,6 +29,7 @@ class ItemController extends Controller
                 'route' => 'items.main',//need to change using controller
                 'children' => [
                     ['label' => 'All Devices', 'route' => 'items.main'],
+                    ['label' => 'Vendors', 'route' => 'vendors.main'],
                 ],
             ],
             [

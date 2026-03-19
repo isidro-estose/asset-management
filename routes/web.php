@@ -29,4 +29,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 
     Route::get('/items', [App\Http\Controllers\ItemController::class, 'main'])->name('items.main');
+
+    Route::get('/vendors', [App\Http\Controllers\VendorController::class, 'main'])->name('vendors.main');
 }); 
