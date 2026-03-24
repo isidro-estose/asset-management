@@ -27,8 +27,8 @@ class DashboardController extends Controller
                 'icon' => 'bi bi-diagram-3-fill',
                 'route' => 'items.main',//need to change using controller
                 'children' => [
-                    ['label' => 'All Devices', 'route' => 'items.main'],
-                    ['label' => 'Vendors', 'route' => 'vendors.main'],
+                    ['label' => 'All Devices', 'route' => 'item.main'],
+                    ['label' => 'Vendors', 'route' => 'vendor.main'],
                 ],
             ],
             [

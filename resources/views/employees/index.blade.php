@@ -67,4 +67,4 @@
         </tbody>
     </table>
 @endsection
-<script src="{{ asset('js/eventModal.js') }}"></script>
+<script src="{{ asset('js/employeeEventModal.js') }}"></script>

@@ -89,10 +89,16 @@
   <div class="main-content">
     @include('partials.navbar')
     @include('partials.create_modal')
+    @include('partials.create_vendor')
     
+    @if (isset($vendor))
+        @include('partials.edit_vendor')
+    @endif
+
     @if(isset($employee))
         @include('partials.edit_modal')
     @endif
+    
     <div class="content">
       @yield('content')
     </div>

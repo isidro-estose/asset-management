@@ -28,7 +28,12 @@ Route::middleware('auth')->group(function () {
     Route::put('/partials/{employee}/update', [EmployeeController::class, 'update'])->name('employee.update');
     Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 
-    Route::get('/items', [App\Http\Controllers\ItemController::class, 'main'])->name('items.main');
+    Route::get('/items', [App\Http\Controllers\ItemController::class, 'main'])->name('item.main');
 
-    Route::get('/vendors', [App\Http\Controllers\VendorController::class, 'main'])->name('vendors.main');
+
+    // Routes for Vendor management
+    Route::get('/vendor', [App\Http\Controllers\VendorController::class, 'main'])->name('vendor.main');
+    Route::get('/vendor/create', [App\Http\Controllers\VendorController::class, 'create'])->name('vendor.create');
+    Route::post('/vendor/store', [App\Http\Controllers\VendorController::class, 'store'])->name('vendor.store');
+    Route::put('/vendor/{vendor}/update', [App\Http\Controllers\VendorController::class, 'update'])->name('vendor.update');
 }); 

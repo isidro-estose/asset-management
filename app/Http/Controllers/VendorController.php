@@ -28,8 +28,8 @@ class VendorController extends Controller
                 'icon' => 'bi bi-diagram-3-fill',
                 'route' => 'items.main',//need to change using controller
                 'children' => [
-                    ['label' => 'All Devices', 'route' => 'items.main'],
-                    ['label' => 'Vendors', 'route' => 'vendors.main'],
+                    ['label' => 'All Devices', 'route' => 'item.main'],
+                    ['label' => 'Vendors', 'route' => 'vendor.main'],
                 ],
             ],
             [
@@ -40,6 +40,41 @@ class VendorController extends Controller
         ];
 
         $vendors = Vendor::all();
-        return view('vendors.main', compact('menuItems', 'vendors'));
+        return view('vendors.main', compact('vendors', 'menuItems'));
+    }
+
+    public function create()
+    {
+        return view('vendors.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'vendorName' => 'required|string|max:255',
+            'vendorContactPerson' => 'required|string|max:255',
+            'vendorPhoneNumber' => 'required|string|max:20',
+            'vendorEmail' => 'required|email|max:255',
+            'vendorAddress' => 'required|string|max:255',
+        ]);
+
+        Vendor::create($data);
+
+        return redirect()->route('vendor.main')->with('success', 'Vendor created successfully.');
+    }
+
+    public function update(Request $request, Vendor $vendor)
+    {
+        $vendorData = $request->validate([
+            'vendorName' => 'required|string|max:255',
+            'vendorContactPerson' => 'required|string|max:255',
+            'vendorPhoneNumber' => 'required|string|max:20',
+            'vendorEmail' => 'required|email|max:255',
+            'vendorAddress' => 'required|string|max:255',
+        ]);
+
+        $vendor->update($vendorData);
+
+        return redirect(route('vendor.main'))->with('success', 'Vendor updated successfully.');
     }
 }

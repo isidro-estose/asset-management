@@ -28,8 +28,8 @@ class EmployeeController extends Controller
                 'icon' => 'bi bi-diagram-3-fill',
                 'route' => 'items.main',//need to change using controller
                 'children' => [
-                    ['label' => 'All Devices', 'route' => 'items.main'],
-                    ['label' => 'Vendors', 'route' => 'vendors.main'],
+                    ['label' => 'All Devices', 'route' => 'item.main'],
+                    ['label' => 'Vendors', 'route' => 'vendor.main'],
                 ],
             ],
             [
@@ -61,11 +61,6 @@ class EmployeeController extends Controller
         $newEmployee = Employee::create($data);
 
         return redirect(route('employee.index'));
-    }
-
-    public function edit(Employee $employee)
-    {
-        return view('employees.edit', ['employee' => $employee,]);
     }
 
     public function update(Request $request, Employee $employee)
