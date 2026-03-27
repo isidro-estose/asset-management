@@ -90,6 +90,7 @@
     @include('partials.navbar')
     @include('partials.create_modal')
     @include('partials.create_vendor')
+    @include('partials.create_category')
     
     @if (isset($vendor))
         @include('partials.edit_vendor')

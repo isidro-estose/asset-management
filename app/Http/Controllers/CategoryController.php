@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\item;
+use App\Models\Category;
 
-class ItemController extends Controller
+class CategoryController extends Controller
 {
     public function main()
     {
@@ -40,7 +40,18 @@ class ItemController extends Controller
             ],
         ];
 
-        $items = Item::all();
-        return view('items.main', compact('items', 'menuItems'));
+        $categories = Category::all();
+        return view('categories.main', compact('menuItems', 'categories'));
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'categoryName' => 'required|string|max:255',
+            'categoryDescription' => 'nullable|string|max:255',
+        ]);
+
+        Category::create($data);
+        return redirect()->route('category.main')->with('success', 'Category created successfully.');
     }
 }

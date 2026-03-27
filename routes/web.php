@@ -36,4 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/vendor/create', [App\Http\Controllers\VendorController::class, 'create'])->name('vendor.create');
     Route::post('/vendor/store', [App\Http\Controllers\VendorController::class, 'store'])->name('vendor.store');
     Route::put('/vendor/{vendor}/update', [App\Http\Controllers\VendorController::class, 'update'])->name('vendor.update');
+
+    // Routes for Category management
+    Route::get('/category', [App\Http\Controllers\CategoryController::class, 'main'])->name('category.main');
+    Route::post('/category/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
+    Route::put('/category/{category}/update', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
 }); 
