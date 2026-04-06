@@ -14,29 +14,34 @@
                     <div class="mb-3">
                         <input type="hidden" id="vendorId" name="vendorId" value="{{ $vendor->id }}">
                         <label for="vendorName" class="form-label">Supplier Name</label>
-                        <input type="text" class="form-control" id="vendorName" name="vendorName" value="{{ $vendor->vendorName }}">
+                        <input type="text" class="form-control" id="vendorName" name="vendorName"
+                            value="{{ $vendor->vendorName }}">
                     </div>
                     <div class="mb-3 row">
                         <div class="col">
                             <label for="vendorContactPerson" class="form-label">Contact Person</label>
-                            <input type="text" class="form-control" id="vendorContactPerson" name="vendorContactPerson" value="{{ $vendor->vendorContactPerson }}">
+                            <input type="text" class="form-control" id="vendorContactPerson" name="vendorContactPerson"
+                                value="{{ $vendor->vendorContactPerson }}">
                         </div>
                         <div class="col">
                             <label for="vendorPhoneNumber" class="form-label">Contact Number</label>
-                            <input type="text" class="form-control" id="vendorPhoneNumber" name="vendorPhoneNumber" value="{{ $vendor->vendorPhoneNumber }}">
+                            <input type="text" class="form-control" id="vendorPhoneNumber" name="vendorPhoneNumber"
+                                value="{{ $vendor->vendorPhoneNumber }}">
                         </div>
                     </div>
-                        <div class="col-md-9">
-                            <label for="vendorEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="vendorEmail" name="vendorEmail" value="{{ $vendor->vendorEmail }}">
-                        </div>
-                        <div class="col-md-12 mt-3  ">
-                            <label for="vendorAddress" class="form-label">Address</label>
-                            <textarea class="form-control" id="vendorAddress" name="vendorAddress">{{ $vendor->vendorAddress }}</textarea>
-                        </div>
-                        <div class="mt-3">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </div>
+                    <div class="col-md-9">
+                        <label for="vendorEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="vendorEmail" name="vendorEmail"
+                            value="{{ $vendor->vendorEmail }}">
+                    </div>
+                    <div class="col-md-12 mt-3  ">
+                        <label for="vendorAddress" class="form-label">Address</label>
+                        <textarea class="form-control" id="vendorAddress"
+                            name="vendorAddress">{{ $vendor->vendorAddress }}</textarea>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
                 </form>
             </div>
         </div>

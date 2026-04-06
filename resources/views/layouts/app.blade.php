@@ -92,12 +92,15 @@
     @include('partials.create_vendor')
     @include('partials.create_category')
     
+    
     @if (isset($vendor))
         @include('partials.edit_vendor')
     @endif
-
     @if(isset($employee))
         @include('partials.edit_modal')
+    @endif
+    @if(isset($category))
+        @include('partials.edit_category')
     @endif
     
     <div class="content">

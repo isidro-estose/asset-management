@@ -43,7 +43,6 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('categories.main', compact('menuItems', 'categories'));
     }
-
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -53,5 +52,17 @@ class CategoryController extends Controller
 
         Category::create($data);
         return redirect()->route('category.main')->with('success', 'Category created successfully.');
+    }
+
+    public function update(Request $request, Category $category)
+    {
+        $categoryData = $request->validate([
+            'categoryName' => 'required|string|max:255',
+            'categoryDescription' => 'nullable|string|max:255',
+        ]);
+
+        $category->update($categoryData);
+        
+        return redirect(route('category.main'))->with('success', 'Category updated successfully.');
     }
 }

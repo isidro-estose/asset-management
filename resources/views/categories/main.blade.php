@@ -21,6 +21,7 @@
                 <tr>
                     <th>Category Name</th>
                     <th>Description</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,9 +29,22 @@
                     <tr>
                         <td>{{ $category->categoryName }}</td>
                         <td>{{ $category->categoryDescription }}</td>
+                        <td>
+                            <button 
+                                type="button"
+                                class="btn btn-primary edtBtn"
+                                data-id="{{ $category->id }}"
+                                data-categoryName="{{ $category->categoryName }}"
+                                data-categoryDescription="{{ $category->categoryDescription }}"
+                                data-bs-toggle="modal" 
+                                data-bs-target="#editCategoryModal">
+                            Edit
+                            </button>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 @endsection
+<script src="{{ asset('js/categoryEventModal.js') }}"></script>

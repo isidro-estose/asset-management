@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\CategoryController;
 
 // Redirect root to login page
 Route::get('/', function () {
@@ -38,7 +41,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/vendor/{vendor}/update', [App\Http\Controllers\VendorController::class, 'update'])->name('vendor.update');
 
     // Routes for Category management
+    Route::resource('category', CategoryController::class);
     Route::get('/category', [App\Http\Controllers\CategoryController::class, 'main'])->name('category.main');
     Route::post('/category/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
     Route::put('/category/{category}/update', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
-}); 
+});
