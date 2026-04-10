@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\item;
+use App\Models\category;
+use App\Models\vendor;
 
 class ItemController extends Controller
 {
@@ -42,5 +44,11 @@ class ItemController extends Controller
 
         $items = Item::all();
         return view('items.main', compact('items', 'menuItems'));
+    }
+
+    public function create()
+    {
+        $data['getcategory'] = category::pluck('categoryName', 'id');
+        return view('create.item', $data);
     }
 }

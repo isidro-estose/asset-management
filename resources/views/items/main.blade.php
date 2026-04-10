@@ -7,6 +7,13 @@
         <div class="col">
             <h3>Devices</h3>
         </div>
+        <div class="col">
+            <!-- Button to trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createItemModal" style="float:right">Add</button>
+            <!-- Button to trigger modal -->
+            <div class="modal fade" id="createItemModal" tabindex="-1">
+            </div>
+        </div>
     </div>
     <div class="table-responsive">
         <table class="table table-dark table-striped table-bordered">

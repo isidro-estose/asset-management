@@ -25,8 +25,7 @@
                 <th>Department</th>
                 <th>Date Hired</th>
                 <th>Employee Status</th>
-                <th>Update</th>
-                <th>Delete</th>
+                <th style="text-align: center;" colspan="2">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +38,7 @@
                     <td>{{ $employee->empDeptId }}</td>
                     <td>{{ $employee->empHireDate }}</td>
                     <td>{{ $employee->emp_status }}</td>
-                    <td>
+                    <td style="text-align: center;">
                         <button 
                             type="button"
                             class="btn btn-primary edtBtn"
@@ -55,7 +54,7 @@
                         Edit
                         </button>
                     </td>
-                    <td>
+                    <td style="text-align: center;">
                         <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this employee?');">
                             @csrf
                             @method('DELETE')

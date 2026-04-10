@@ -65,4 +65,5 @@ class CategoryController extends Controller
         
         return redirect(route('category.main'))->with('success', 'Category updated successfully.');
     }
+
 }
