@@ -14,6 +14,7 @@
             <div class="modal fade" id="createItemModal" tabindex="-1">
             </div>
         </div>
+        <a href="{{ route('item.create') }}" class="btn btn-primary" style="float:right" data-bs-toggle="modal" data-bs-target="#createItemModal">Add</a>
     </div>
     <div class="table-responsive">
         <table class="table table-dark table-striped table-bordered">

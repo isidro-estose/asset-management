@@ -48,7 +48,7 @@ class ItemController extends Controller
 
     public function create()
     {
-        $data['getcategory'] = category::pluck('categoryName', 'id');
-        return view('create.item', $data);
+        $categories = category::all();
+        return view('item.create', compact('categories'));
     }
 }

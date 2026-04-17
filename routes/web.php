@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/employee/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 
     Route::get('/item', [App\Http\Controllers\ItemController::class, 'main'])->name('item.main');
-    Route::get('/item/create', [App\Http\Controllers\ItemController::class, 'create'])->name('item.create');
+    Route::get('/partials/create', [App\Http\Controllers\ItemController::class, 'create'])->name('item.create');
 
 
     // Routes for Vendor management

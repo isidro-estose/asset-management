@@ -91,9 +91,12 @@
     @include('partials.create_modal')
     @include('partials.create_vendor')
     @include('partials.create_category')
-    @include('partials.create_item')
-    
-    @if (isset($vendor))
+
+    @if(isset($item))
+        @include('partials.create_item')
+    @endif
+
+    @if(isset($vendor))
         @include('partials.edit_vendor')
     @endif
     @if(isset($employee))

@@ -35,9 +35,9 @@
                         <div class="col">
                             <label for="assetDescription" class="form-label">Description</label>
                             <select name="assetCategory" id="assetCategory" class="form-control">
-                                <option value="">Select Category</option>
-                                @foreach($getcategory as $id =>$categoryName)
-                                    <option value="{{ $id }}">{{ $categoryName }}</option>
+                                <option value="">-- Select Category --</option>
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
